@@ -1,0 +1,83 @@
+/* Root container - flex row */
+.vsc-root {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #1e1e1e; /* VS Code-like dark background */
+  color: #ffffff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar (File Explorer) */
+.vsc-sidebar {
+  width: 220px;
+  background-color: #252526;
+  border-right: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+}
+
+.vsc-sidebar-header {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  border-bottom: 1px solid #333;
+}
+
+.vsc-add-file {
+  margin: 8px;
+  padding: 6px 10px;
+  font-size: 13px;
+  background-color: #0e639c;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.vsc-add-file:hover {
+  background-color: #1177bb;
+}
+
+/* File list */
+.vsc-file-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.vsc-file-item {
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.vsc-file-item:hover {
+  background-color: #2a2d2e;
+}
+.vsc-file-active {
+  background-color: #094771;
+  color: #ffffff;
+}
+
+/* Editor container */
+.vsc-editor {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #1e1e1e;
+}
+
+.vsc-editor-header {
+  padding: 8px 12px;
+  background-color: #252526;
+  border-bottom: 1px solid #333;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.vsc-editor > div {
+  flex-grow: 1;
+}

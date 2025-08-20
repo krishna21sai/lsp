@@ -1,5 +1,6 @@
 import { useState } from "react";
-import MonacoEditor from "@monaco-editor/react";
+import FileExplorer from "./FileExplorer";
+import EditorView from "./EditorView";
 
 export default function App() {
   const [files, setFiles] = useState({
@@ -36,33 +37,18 @@ export default function App() {
 
   return (
     <div className="vsc-root">
-      {/* Sidebar File Explorer */}
-      <div className="vsc-sidebar">
-        <div className="vsc-sidebar-header">EXPLORER</div>
-        <button className="vsc-add-file" onClick={addFile}>+ Add File</button>
-        <ul className="vsc-file-list">
-          {Object.keys(files).map((file) => (
-            <li
-              key={file}
-              className={`vsc-file-item${activeFile === file ? " vsc-file-active" : ""}`}
-              onClick={() => setActiveFile(file)}
-            >
-              <span className="vsc-file-icon">📄</span> {file}
-            </li>
-          ))}
-        </ul>
-      </div>
-      {/* Code Editor */}
-      <div className="vsc-editor">
-        <div className="vsc-editor-header">{activeFile}</div>
-        <MonacoEditor
-          height="calc(100vh - 32px)"
-          theme="vs-dark"
-          language={files[activeFile].language}
-          value={files[activeFile].value}
-          onChange={(value) => onChange(value)}
-        />
-      </div>
+      <FileExplorer
+        files={files}
+        activeFile={activeFile}
+        setActiveFile={setActiveFile}
+        addFile={addFile}
+      />
+      <EditorView
+        file={activeFile}
+        value={files[activeFile].value}
+        language={files[activeFile].language}
+        onChange={onChange}
+      />
     </div>
   );
 }
