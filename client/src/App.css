@@ -1,0 +1,122 @@
+/* === Root Layout === */
+.vsc-root {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  background: #1e1e1e;
+  color: #d4d4d4;
+  font-family: 'Segoe UI', 'Fira Mono', monospace, sans-serif;
+  overflow: hidden;
+}
+
+/* === Sidebar === */
+.vsc-sidebar {
+  width: 240px;
+  min-width: 200px;
+  max-width: 260px;
+  background: #252526;
+  border-right: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.vsc-sidebar-header {
+  padding: 12px 14px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #bababa;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #333;
+  text-transform: uppercase;
+}
+
+.vsc-add-file {
+  margin: 10px 14px;
+  padding: 6px 10px;
+  background: #0e639c;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.2s;
+}
+.vsc-add-file:hover {
+  background: #1177bb;
+}
+
+.vsc-file-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.vsc-file-item {
+  display: flex;
+  align-items: center;
+  padding: 4px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 2px;
+  margin: 2px 4px;
+  transition: background 0.2s;
+}
+.vsc-file-item:hover {
+  background: #2a2d2e;
+}
+.vsc-file-active {
+  background: #37373d;
+  border-left: 3px solid #0e639c;
+  font-weight: normal;
+  color: #fff;
+}
+.vsc-file-icon {
+  margin-right: 8px;
+}
+
+/* === Editor Area === */
+.vsc-editor {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #1e1e1e;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.vsc-editor-header {
+  height: 30px;
+  background: #2c2c32;
+  color: #ccc;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  border-bottom: 1px solid #333;
+}
+
+/* === Monaco Editor Styling === */
+.vsc-editor .monaco-editor {
+  flex: 1 !important;
+}
+.vsc-editor .monaco-editor .margin {
+  background: #1e1e1e !important;
+}
+.vsc-editor .monaco-editor .minimap {
+  display: none !important;
+}
+
+/* === Reset Root Styles === */
+#root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  overflow: hidden;
+}
